@@ -1,0 +1,15 @@
+@{
+  Layout = "_Layout";
+}
+<h1>Message:</h1>
+
+<ul>
+  <li>ID: @Model.MessageId</li>
+  <li>Group ID: @Model.GroupId</li>
+  <li>Username: @Model.UserName</li>
+  <li>Date: @Model.Date</li>
+  <li>Content: @Model.Content</li>
+</ul>
+
+<a href="/Messages"><p>Full List</p></a>
+<a href="/Messages/Delete/@(Model.MessageId)"><p>Delete</p></a>

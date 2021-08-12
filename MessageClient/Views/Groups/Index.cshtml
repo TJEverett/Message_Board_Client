@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+<h1>All Groups:</h1>
+
+<ol>
+  @foreach (Group group in Model)
+  {
+    <ul>
+      <li>ID: @group.GroupId</li>
+      <li>Name: @group.Name</li>
+    </ul>
+    <a href="/Groups/Details/@(group.GroupId)"><p>View Details</p></a>
+    <br>
+  }
+</ol>
+
+<a href="/Groups/Create"><p>Create new group</p></a>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

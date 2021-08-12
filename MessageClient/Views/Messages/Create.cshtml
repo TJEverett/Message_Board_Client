@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@model MessageClient.Models.Message
+
+<h4>Post a new Message</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.Label("Post to this group:")
+  @Html.DropDownList("GroupId")
+
+  @Html.Label("Message to Post:")
+  @Html.TextBoxFor(model => model.Content)
+
+  <input type="submit" value="Save" />
+}

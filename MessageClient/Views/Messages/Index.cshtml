@@ -1,0 +1,28 @@
+@{
+  Layout = "_Layout";
+}
+<h1>All Messages:</h1>
+
+<ol>
+  @foreach (Message message in Model)
+  {
+    <ul>
+      <li>ID: @message.MessageId</li>
+      <li>Group Name: @ViewBag.groupDictionary[message.GroupId]</li>
+      <li>Username: @message.UserName</li>
+      <li>Date: @message.Date</li>
+      <li>Content: @message.Content</li>
+    </ul>
+    <a href="/Messages/Details/@(message.MessageId)"><p>View Details</p></a>
+  }
+</ol>
+<br>
+@using (Html.BeginForm())
+{
+  @Html.DropDownList("groupId")
+  <input type="submit" value="Display This Group" />
+}
+
+<p>@Html.ActionLink("New Post", "Create")</p>
+<br>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+@model MessageClient.Models.Group
+
+<h4>Create a New Group</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.Label("Group Name:")
+  @Html.TextBoxFor(model => model.Name)
+
+  <input type="submit" value="Save" />
+}
+
+<a href="/Groups"><p>Back to full list</p></a>
